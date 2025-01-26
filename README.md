@@ -19,7 +19,7 @@ In this project I am using postgres database. It is hosted through the `choreo.d
 
 If you prefer to use a local database ex: `sqlite`. You need to change the `backup` items in the `DATABASES` key in the `backend/backend/settings.py` file to `default`
 
-![settings.py]('./assets/settings-py.png')
+![settings.py](./assets/settings-py.png)
 
 4. Run migrations:
 
