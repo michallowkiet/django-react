@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css";
+import Loader from "./Loader";
 
 interface FormProps {
   route: string;
@@ -59,6 +60,8 @@ const Form = ({ route, type }: FormProps) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+
+      {isLoading && <Loader />}
 
       <button
         className="form-button"

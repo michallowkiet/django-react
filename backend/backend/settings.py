@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from datetime import timedelta
+from os import getenv
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -93,9 +94,17 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "HOST": getenv("DB_HOST"),
+        "PORT": getenv("DB_PORT"),
+        "USER": getenv("DB_USER"),
+        "PASSWORD": getenv("DB_PASS"),
+        "NAME": getenv("DB_NAME"),
+    },
+    "backup": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
 }
 
 
